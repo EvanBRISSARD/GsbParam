@@ -1,4 +1,5 @@
 <div id="produits">
+
 <?php
 // parcours du tableau contenant les produits à afficher
 foreach( $lesProduits as $unProduit) 

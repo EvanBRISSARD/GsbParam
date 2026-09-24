@@ -27,10 +27,11 @@ class ControleurVoirProduits{
     public function voirProduits($categ){
 		$lesProduits=$this->modeleFront->getLesProduitsDeCategorie($categ);
         $lesCategories=$this->modeleFront->getLesCategories();
-        
+        $libelleCategorie=$this->modeleFront->getLesInfosCategorie($categ)->libelle;
+
         include("vues/v_choixCategorie.php");
         include("vues/v_produits.php");
-    }
+    }   
 	/**
 	 * Affiche le menu à gauche contenant les catégories
 	*/
