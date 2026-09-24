@@ -18,6 +18,10 @@ class ControleurVoirProduits{
     {
         $this->modeleFront=new ModeleFront();
     }
+    public function nosProduit(){
+        $lesProduits=$this->modeleFront->getLesProduitsDuTableau();
+        include("vues/v_produits.php");
+    }
 	/**
 	 * Affiche les produits
 	 *
