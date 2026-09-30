@@ -84,6 +84,7 @@ class ControleurGererPanier{
 		else
 		{
 			$_SESSION['produits'][]= $idProduit; // l'indice n'est pas précisé : il sera automatiquement mis à la fin
+			
 		}
 		$this->voirPanier();
 	}
@@ -164,9 +165,13 @@ class ControleurGererPanier{
 	 *
 	 * Supprime le tableau $_SESSION['produits']
 	 */
-	function supprimerPanier()
+	function supprimerPanier($idProduit)
 	{
-		unset($_SESSION['produits']);
+		
+		$_SESSION['produits']= array_diff($_SESSION['produits'], [$idProduit]);
+		$message = "Produit retiré de votre panier.";
+		include ("vues/v_message.php");
+		$this->voirPanier();
 	}
 	/**
 	 * teste si une chaîne a un format de code postal
