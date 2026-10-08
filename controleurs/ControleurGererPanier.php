@@ -47,6 +47,7 @@ class ControleurGererPanier{
 			{
 				$desIdProduit = $this->getLesIdProduitsDuPanier();
 				$lesProduitsDuPanier = $this->modeleFront->getLesProduitsDuTableau($desIdProduit);
+				include("vues/v_buttonViderPanier.html");
 				include("vues/v_panier.php");
 			}
 			else
@@ -64,6 +65,7 @@ class ControleurGererPanier{
 	function viderPanier()
 	{
 		unset($_SESSION['produits']);
+		$this->voirPanier();
 	}
 	/**
 	 * Ajoute un produit au panier
