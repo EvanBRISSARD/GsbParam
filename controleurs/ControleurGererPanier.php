@@ -156,7 +156,7 @@ class ControleurGererPanier{
 				$lesIdProduits = $this->getLesIdProduitsDuPanier();
 				$this->modeleFront->creerCommande($nom,$rue,$cp,$ville,$mail, $lesIdProduits );
 				$message = "La commande a été enregistrée. Merci de votre visite.";
-				$this->supprimerPanier();
+				$this->viderPanier();
 				include ("vues/v_message.php");
 			}
 		}
