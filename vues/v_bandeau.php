@@ -9,13 +9,17 @@
         <div class="align-self-center collapse navbar-collapse justify-content-end align-items-center" id="navbar-toggler-success">
           <div class="d-flex justify-content-center mx-auto mx-xl-0">
             <ul class="nav mb-2 flex-lg-row flex-column d-flex justify-content-center align-items-center mb-md-0">
+              <?php if(isset($_SESSION['adminStatus']) == true) { ?>
+              <li><button type="button" class="btn btn-link" onclick="window.location.href='index.php?uc=administrer&action=seDeconnecter'">Se déconnecter</button></li>
+              <?php } else { ?>
+              <li><button type="button" class="btn btn-link" onclick="window.location.href='index.php?uc=administrer&action=login'">Se connecter</button></li>
+              <?php } ?>
               <li><a  href="index.php?uc=accueil" class="nav-link rounded-pill px-3 mx-1 fw-bold link-dark">Accueil</a></li>
               <li><a  href="index.php?uc=voirProduits&action=nosProduits" class="nav-link rounded-pill px-3 mx-1 fw-bold link-dark">Nos produits</a></li>
               <li><a  href="index.php?uc=voirProduits&action=voirProduits&categorie=CH" class="nav-link rounded-pill px-3 mx-1 fw-bold link-dark">Produits par catégorie</a></li>
               <li><a href="index.php?uc=gererPanier&action=voirPanier" class="nav-link rounded-pill px-3 mx-1 fw-bold link-dark">Mon panier</a></li>
             </ul>
           </div>
-
         </div>
       </div>
     </nav>

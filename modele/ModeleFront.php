@@ -152,6 +152,30 @@ class ModeleFront extends Modele{
         die();
 		}
 	}
+	public function adminVerif($mdp, $login) {
+		try {
+			$req = "SELECT nom, mdp FROM administrateur
+					WHERE mdp = :mdp AND nom = :login;";
+
+			$res = $this->executerRequete($req, array(
+				':mdp' => $mdp,
+				':login' => $login
+			));
+
+			$laLigne = $res->fetch(PDO::FETCH_ASSOC);
+
+			if ($laLigne &&
+				$mdp === $laLigne['mdp'] &&
+				$login === $laLigne['nom']) {
+				return true;
+			}
+
+			return false;
+
+		} catch (PDOException $e) {
+			return false;
+		}
+	}
 
 }
 ?>
