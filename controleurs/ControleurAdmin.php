@@ -22,6 +22,7 @@ class ControleurAdmin{
     public function login(){
         include("vues/v_login.html");
     }
+    
     public function seDeconnecter(){
         
         session_destroy();
@@ -30,6 +31,7 @@ class ControleurAdmin{
         include ("vues/v_message.php");
         include("vues/v_login.html");
     }
+    
     public function verifiLoginPass(){
         if (!isset($_POST['login'], $_POST['pass']) || trim($_POST['login']) === '' || $_POST['pass'] === ''){
             

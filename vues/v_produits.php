@@ -17,8 +17,13 @@ foreach( $lesProduits as $unProduit)
 			<div class="prixCard"><?= $prix."€" ?></div>
 			</div>
 			<div class="imgCard"><a href="index.php?uc=gererPanier&produit=<?= $id ?>&action=ajouterAuPanier"> 
-			<img src="assets/images/mettrepanier.png" title="Ajouter au panier" alt="Mettre au panier"> </a></div>
+			<img src="assets/images/mettrepanier.png" title="Ajouter au panier" alt="Mettre au panier"> </a>
 			
+	</div>
+			<?php if(isset($_SESSION['adminStatus']) == true) { ?>
+			<div class="imgCard"> <a class="btn btn-outline-info btn-sm" href=''>Modifier</a> </div>
+			<div class="imgCard"> <a class="btn btn-danger btn-sm" href=''>Supprimer</a> </div>
+			<?php } ?>
 	</div>
 <?php			
 } // fin du foreach qui parcourt les produits
