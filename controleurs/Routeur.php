@@ -64,6 +64,7 @@ class Routeur{
                 case 'login' : {$this->ctrlAdmin->login();break;}
                 case 'loginVerif' : {$this->ctrlAdmin->verifiLoginPass();break;}
                 case 'seDeconnecter' : {$this->ctrlAdmin->seDeconnecter();break;}
+                case 'modiferProduit' : {$this->ctrlAdmin->modiferProduit($_REQUEST['produit']);break;}
             }
 		break; 
     }

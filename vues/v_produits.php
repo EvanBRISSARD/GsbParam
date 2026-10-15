@@ -21,7 +21,7 @@ foreach( $lesProduits as $unProduit)
 			
 	</div>
 			<?php if(isset($_SESSION['adminStatus']) == true) { ?>
-			<div class="imgCard"> <a class="btn btn-outline-info btn-sm" href=''>Modifier</a> </div>
+			<div class="imgCard"> <a class="btn btn-outline-info btn-sm" href='index.php?uc=administrer&produit=<?= $id ?>&action=modiferProduit'>Modifier</a> </div>
 			<div class="imgCard"> <a class="btn btn-danger btn-sm" href=''>Supprimer</a> </div>
 			<?php } ?>
 	</div>
