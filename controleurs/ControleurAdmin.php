@@ -63,7 +63,15 @@ class ControleurAdmin{
     public function modiferProduit($idProduit){
         $produit = $this->modeleFront->getLesProduitsDuTableau(array($idProduit));
         $categories = $this->modeleFront->getLesCategories();
-        
         include ("vues/v_modiferProduit.php");
+    }
+
+    public function updateProduit($re){
+        if (!isset($re['produit'], $re['description'], $re['prix'], $re['categories'])){
+                $msgErreurs[]='information update invalides.';
+                include("vues/v_erreurs.php");
+                include("vues/v_login.html");
+        }
+        var_dump($re);
     }
 }

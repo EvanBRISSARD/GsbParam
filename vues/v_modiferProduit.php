@@ -1,5 +1,5 @@
 <div style="width: 17%; margin: auto; margin-top: 5%;">
-  <form action="index.php?uc=administrer&action=updateProduit" method="POST">
+  <form action="index.php?uc=administrer&produit=<?php echo $produit[0]->id ?>&action=updateProduit" method="POST">
     
     <!-- Description input -->
     <div data-mdb-input-init class="form-outline mb-4">
