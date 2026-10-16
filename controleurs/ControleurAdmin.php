@@ -59,4 +59,11 @@ class ControleurAdmin{
         }
 
     }
+
+    public function modiferProduit($idProduit){
+        $produit = $this->modeleFront->getLesProduitsDuTableau(array($idProduit));
+        $categories = $this->modeleFront->getLesCategories();
+        
+        include ("vues/v_modiferProduit.php");
+    }
 }
